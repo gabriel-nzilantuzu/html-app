@@ -17,6 +17,7 @@
             height: 100vh;
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: white;
+            overflow: hidden;
         }
 
         h1 {
@@ -46,6 +47,25 @@
         .btn:hover {
             background-color: #f1f1f1;
         }
+
+        .animation-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            background-color: white;
+            border-radius: 50%;
+            z-index: 1000;
+            opacity: 0.9;
+            transition: width 0.5s ease-out, height 0.5s ease-out;
+        }
+
+        .animate {
+            width: 300vw;
+            height: 300vh;
+        }
     </style>
 </head>
 
@@ -53,7 +73,18 @@
     <h1>Welcome to Namespaxe</h1>
     <p>Your one-stop platform for learning and deploying cloud projects with ease. Explore Kubernetes, containerization,
         and much more.</p>
-    <button class="btn" onclick="window.location.href='https://namespaxe.com'">Get Started</button>
+    <button class="btn" onclick="triggerAnimation('https://namespaxe.com')">Get Started</button>
+    <div class="animation-overlay" id="animationOverlay"></div>
+
+    <script>
+        function triggerAnimation(url) {
+            const overlay = document.getElementById('animationOverlay');
+            overlay.classList.add('animate');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 500);
+        }
+    </script>
 </body>
 
 </html>
