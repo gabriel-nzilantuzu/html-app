@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: html-app-container
-          image: namespaxe/html-app:1.0.0
+          image: namespaxe/html-app:1.0.2
           resources:
             requests:
               memory: "50Mi"
