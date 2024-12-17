@@ -1,2 +1,2 @@
-# html-app
-A plane html app containing html, css, and JS
+# index-template
+Index template containing plain html and css
